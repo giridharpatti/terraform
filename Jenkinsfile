@@ -8,12 +8,12 @@ pipeline{
     }
     stage('terraform plan'){
       steps{
-        sh "terraform plan --var-file=${tfvarfilename}"
+        sh "terraform plan --var-file=${tfvarfilename}.tfvars"
       }
     }
      stage('terraform apply'){
       steps{
-        sh "terraform apply --var-file=${tfvarfilename} --auto-approve"
+        sh "terraform apply --var-file=${tfvarfilename}.tfvars --auto-approve"
       }
     }
   }
