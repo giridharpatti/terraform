@@ -18,8 +18,8 @@ pipeline{
     }
     stage('terraform statefile copy to s3'){
       steps{
-        sh "mv terraform.state terraform-${tfvarfilename}.${BUILD_NUMBER}.state"
-        sh "aws s3 cp terraform-${tfvarfilename}.${BUILD_NUMBER}.state s3://giriterraform/tfstate/terraform-${tfvarfilename}.${BUILD_NUMBER}.state"
+        sh "mv /var/lib/jenkins/workspace/vpcterraform.state /var/lib/jenkins/workspace/vpcterraform-${tfvarfilename}.${BUILD_NUMBER}.state"
+        sh "aws s3 cp /var/lib/jenkins/workspace/vpc/terraform-${tfvarfilename}.${BUILD_NUMBER}.state s3://giriterraform/tfstate/terraform-${tfvarfilename}.${BUILD_NUMBER}.state"
       }
     }
   }
