@@ -8,7 +8,7 @@ pipeline{
     }
     stage('terraform plan'){
       steps{
-        sh "terraform plan --var-file=${tfvarfilename}.tfvars"
+        sh "terraform plan -reconfigure --var-file=${tfvarfilename}.tfvars"
       }
     }
      stage('terraform apply'){
