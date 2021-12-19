@@ -1,7 +1,7 @@
 terraform {
  backend "s3" {
    bucket         = "giriterraform"
-   key            = "/terraform.tfstate"
+   key            = "terraform.tfstate"
    region         = "var.region"
  }
 }
